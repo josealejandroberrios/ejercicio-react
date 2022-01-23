@@ -1,38 +1,33 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
   "extends": [
-    "airbnb",
+    "airbnb-typescript/base",
     "prettier",
-    "plugin:react-hooks/recommended"
+    "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": ["react", "jsx-a11y", "import", "prettier"],
-  "globals": {
-    "__DEV__": true
-  },
-  "env": {
-    "browser": true,
-    "jest": true
-  },
+  "plugins": ["react", "jsx-a11y", "import", "prettier", "@typescript-eslint"],
   "rules": {
     "max-len": ["error", { "code": 100 }],
     "prefer-promise-reject-errors": ["off"],
     "react/jsx-filename-extension": ["off"],
-    "react/prop-types": ["warn"],
     "no-return-assign": ["off"],
     "import/prefer-default-export": "off",
     "import/extensions": [
       "error",
-      "always",
+      "never",
       {
+        "ts": "never",
+        "tsx": "never",
         "js": "never",
-        "jsx": "never",
-        "mjs": "never"
+        "jsx": "never"
       }
     ],
     "import/no-cycle": "off",
     "react/jsx-props-no-spreading": "off",
     "import/no-extraneous-dependencies": "off",
-    "no-console": "off",
     "prettier/prettier": [
       "error",
       {
@@ -41,14 +36,21 @@
         "endOfLine": "auto"
       }
     ],
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "@typescript-eslint/explicit-module-boundary-types": ["error"],
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/no-explicit-any": ["error", { "ignoreRestArgs": true }]
   },
   "ignorePatterns": ["node_modules/"],
   "settings": {
     "import/resolver": {
-      "node": {
-        "moduleDirectory": ["node_modules", "src"]
-      }
+      "alias": [
+        ["~components/*", "/components/*"],
+        ["~constants/*", "/constants/*"],
+        ["~context/*", "/context/*"],
+        ["~hooks/*", "/hooks/*"],
+        ["~utils/*", "/utils/*"]
+      ]
     }
   }
 }
