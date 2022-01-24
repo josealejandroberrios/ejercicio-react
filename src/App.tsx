@@ -1,23 +1,29 @@
 import React, { FC } from 'react';
 
-import './App.scss';
+import './app.scss';
 
 const App: FC = () => {
   return (
     <div className="app">
-      <header className="app-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="app-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className="section-container">
+        <h1 className="section-title">Simulá tu crédito</h1>
+
+        <div>
+          <span>Monto Total</span>
+          <span>Plazo</span>
+        </div>
+
+        <div>
+          <div>
+            <span>Cuota Fija por mes</span>
+          </div>
+
+          <div>
+            <span>Obtene Credito</span>
+            <span>Ver detalles de Cuotas</span>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
