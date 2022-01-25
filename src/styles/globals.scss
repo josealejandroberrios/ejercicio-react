@@ -1,10 +1,12 @@
+/* stylelint-disable property-no-vendor-prefix */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import "./variables";
 
 html,
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat, sans-serif;
+  font-size: $font-16;
   font-weight: normal;
-  font-size: 16px;
   margin: 0;
   padding: 0;
 }
@@ -17,4 +19,74 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:focus,
+input:focus-visible {
+  outline: 0;
+}
+
+// Slider
+
+.rc-slider {
+  height: 38px;
+  margin: 0 auto;
+  width: calc(100% - 70px);
+
+  .rc-slider-rail {
+    border-radius: 0;
+    height: 6px;
+  }
+
+  .rc-slider-track {
+    background-color: $white;
+    height: 6px;
+  }
+
+  .rc-slider-step {
+    height: 6px;
+
+    .rc-slider-dot {
+      display: none;
+    }
+  }
+
+  .rc-slider-handle {
+    border: 1px solid $white;
+    height: 18px;
+    margin-top: -6px;
+    width: 18px;
+
+    &:hover,
+    &:active {
+      border-color: $white;
+      box-shadow: 0 0 5px $blue-primary;
+    }
+  }
+
+  .rc-slider-mark {
+    top: 21px;
+
+    .rc-slider-mark-text {
+      color: $white;
+      font-size: $font-16;
+      width: max-content;
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .rc-slider .rc-slider-mark .rc-slider-mark-text {
+    font-size: $font-14;
+  }
 }

@@ -1,0 +1,44 @@
+@import "../../styles/variables";
+
+.button {
+  border: transparent;
+  color: $white;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 16px;
+  padding: 10px;
+  text-transform: uppercase;
+  width: 100%;
+
+  &.button-primary {
+    background-color: $turquoise;
+  }
+
+  &.button-secondary {
+    background-color: $blue-button;
+  }
+
+  &.button-small {
+    font-size: $font-18;
+  }
+
+  &.button-large {
+    font-size: $font-24;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 426px) {
+  .button {
+    &.button-small {
+      font-size: $font-16;
+    }
+
+    &.button-large {
+      font-size: $font-18;
+    }
+  }
+}
